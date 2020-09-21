@@ -1,0 +1,20 @@
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+h5 {
+  text-align: center;
+}
+
+.numberInputs,
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.numberInputs p,
+.row p {
+  margin: 10px;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho Prático - Módulo 1</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/materialize.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>Super Calculadora</h1>
+
+    <div>
+      <div class="numberInputs">
+        <p>
+          <label>Primeiro número (A):</label>
+          <input type="text" id="numA" />
+        </p>
+        <p>
+          <label>Segundo número (B):</label>
+          <input type="text" id="numB" />
+        </p>
+      </div>
+
+      <!-- <h5>Cálculos</h5> -->
+      <div class="numberOutputs">
+        <div class="row">
+          <p>
+            <label>Soma (a + b):</label>
+            <input type="text" id="sum" disabled />
+          </p>
+          <p>
+            <label>Subtração 1 (a - b):</label>
+            <input type="text" id="subOne" disabled />
+          </p>
+          <p>
+            <label>Subtração 2 (b - a):</label>
+            <input type="text" id="subTwo" disabled />
+          </p>
+        </div>
+
+        <div class="row">
+          <p>
+            <label>Multiplicação (a x b):</label>
+            <input type="text" id="mult" disabled />
+          </p>
+          <p>
+            <label>Divisão 1 (a / b):</label>
+            <input type="text" id="divOne" disabled />
+          </p>
+          <p>
+            <label>Divisão 2 (b / a):</label>
+            <input type="text" id="divTwo" disabled />
+          </p>
+        </div>
+
+        <div class="row">
+          <p>
+            <label>Quadrado de a (a²):</label>
+            <input type="text" id="squareA" disabled />
+          </p>
+          <p>
+            <label>Quadrado de b (b²):</label>
+            <input type="text" id="squareB" disabled />
+          </p>
+          <p>
+            <label>Divisores inteiros de a:</label>
+            <input type="text" id="divIntA" disabled />
+          </p>
+        </div>
+
+        <div class="row">
+          <p>
+            <label>Divisores inteiros de b:</label>
+            <input type="text" id="divIntB" disabled />
+          </p>
+          <p>
+            <label>Fatorial de a (a!):</label>
+            <input type="text" id="fatA" disabled />
+          </p>
+          <p>
+            <label>Fatorial de b (b!):</label>
+            <input type="text" id="fatB" disabled />
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/materialize.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
