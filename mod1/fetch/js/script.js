@@ -1,4 +1,16 @@
 window.addEventListener('load', function () {
+  doFetch();
+  doFetchAsync();
+
+  divisionPromise(12, 6).then((result) => console.log(result));
+  divisionPromise(12, 0)
+    .then((result) => console.log(result))
+    .catch((errorMessage) => console.log('Falha na divisão: ' + errorMessage));
+
+  executeDivisionPromiseAsyncAwait();
+});
+
+function doFetch() {
   fetch('https://api.github.com/users/rrgomide')
     .then((res) => {
       res.json().then((data) => {
@@ -8,12 +20,13 @@ window.addEventListener('load', function () {
     .catch((error) => {
       console.log('Erro na requisição');
     });
+}
 
-  divisionPromise(12, 6).then((result) => console.log(result));
-  divisionPromise(12, 0)
-    .then((result) => console.log(result))
-    .catch((errorMessage) => console.log('Falha na divisão: ' + errorMessage));
-});
+async function doFetchAsync() {
+  const res = await fetch('https://api.github.com/users/rrgomide');
+  const json = await res.json();
+  console.log(json);
+}
 
 function showData(data) {
   const user = document.querySelector('#user');
@@ -28,4 +41,19 @@ function divisionPromise(a, b) {
 
     resolve(a / b);
   });
+}
+
+function executeDivisionPromise() {
+  divisionPromise(12, 0)
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((errorMessage) => {
+      console.log('Falha na divisão: ' + errorMessage);
+    });
+}
+
+async function executeDivisionPromiseAsyncAwait() {
+  const divison = await divisionPromise(12, 2);
+  console.log(divison);
 }
