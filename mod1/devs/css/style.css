@@ -1,3 +1,38 @@
 h1 {
   color: darkblue;
+  padding: 10px;
+}
+
+#searchDevInput,
+#countDevsDiv {
+  margin-left: 10px;
+}
+
+#filterDiv {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+#radiosDiv {
+  /* float: right; */
+  margin-left: 100px;
+}
+
+[type='checkbox'] + span:not(.lever) {
+  padding-left: 25px;
+}
+
+#filterDiv label + label {
+  margin-left: 15px;
+}
+
+.dev {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.dev img {
+  border-radius: 50%;
 }

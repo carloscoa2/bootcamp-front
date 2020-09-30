@@ -4,11 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Devs</title>
   </head>
   <body>
-    <h1>Devs</h1>
+    <h1>search-devs</h1>
+    <input type="text" id="searchDevInput" placeholder="Pesquisa por nome" />
+    <div id="filterDiv">
+      <div id="checksDiv">
+        <label>
+          <input type="checkbox" id="Java" checked />
+          <span>Java</span>
+        </label>
+        <label>
+          <input type="checkbox" id="JavaScript" checked />
+          <span>JavaScript</span>
+        </label>
+        <label>
+          <input type="checkbox" id="Python" checked />
+          <span>Python</span>
+        </label>
+      </div>
+      <div id="radiosDiv">
+        <label>
+          <input id="andRadio" name="logicRadios" type="radio" />
+          <span>E</span>
+        </label>
+        <label>
+          <input id="orRadio" name="logicRadios" type="radio" checked />
+          <span>OU</span>
+        </label>
+      </div>
+    </div>
+
+    <div id="resultDiv">
+      <div id="countDevsDiv"></div>
+      <div id="devsDiv"></div>
+    </div>
 
     <script src="./js/script.js"></script>
   </body>
