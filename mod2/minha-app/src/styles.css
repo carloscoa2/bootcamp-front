@@ -12,3 +12,34 @@ app-tic-tac-toe td {
   text-align: center;
   vertical-align: middle;
 }
+
+app-movies * {
+  font-family: Arial;
+}
+
+app-movies table {
+  border-spacing: 0;
+}
+
+app-movies td {
+  border-top: 1px solid;
+  padding: 4px;
+}
+
+.rating {
+  color: darkgoldenrod;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial;
+}
+
+.box {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: aqua;
+  border: 2px solid grey;
+  margin-right: 1rem;
+}
