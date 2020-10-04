@@ -1,0 +1,16 @@
+<h1>{{ titulo }}</h1>
+
+<ng-container *ngIf="fotos.length > 0">
+  <img src="{{ fotos[atual] }}" />
+  <div>
+    <button (click)="primeiro()" [disabled]="checkFirst()">|<</button>
+    <button (click)="anterior()" [disabled]="checkFirst()"><</button>
+    <button (click)="proximo()" [disabled]="checkLast()">></button>
+    <button (click)="ultimo()" [disabled]="checkLast()">>|</button>
+    <span>Foto {{ atualIndex() }} de {{ totalFotos() }}</span>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="fotos.length == 0">
+  <p>Nenhuma foto.</p>
+</ng-container>
