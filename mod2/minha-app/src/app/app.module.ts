@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { PanelComponent } from './panel/panel.component';
 import { C1Component } from './c1/c1.component';
 import { C2Component } from './c2/c2.component';
+import { RefreshComponent } from './refresh/refresh.component';
+import { CounterComponent } from './counter/counter.component';
+import { ConfigComponent } from './config/config.component';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { C2Component } from './c2/c2.component';
     PanelComponent,
     C1Component,
     C2Component,
+    RefreshComponent,
+    CounterComponent,
+    ConfigComponent,
+    TimerComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

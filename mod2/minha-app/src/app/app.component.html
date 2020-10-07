@@ -1,9 +1,8 @@
-<h3>Componente principal</h3>
-
 <div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
+  <div class="right">
+    <button *ngIf="!config" (click)="config = true">Configurações</button>
+    <button *ngIf="config" (click)="config = false">Voltar</button>
+  </div>
+  <app-config *ngIf="config" [exercises]="exercises">Configurações</app-config>
+  <app-timer *ngIf="!config" [exercises]="exercises">Cronômetro</app-timer>
 </div>
-
-<c1></c1>
