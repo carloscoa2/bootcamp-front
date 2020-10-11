@@ -7,14 +7,14 @@ import { Exercise } from './exercise';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  config: boolean = false;
-  exercises: Exercise[] = [
-    {
-      name: 'Abdominal',
-      duration: 30,
-      repetitions: 3,
-      preparation: 15,
-      rest: 20,
-    },
-  ];
+  text = 'Uma mensagem aqui';
+  n = 1234.788;
+  hoje = new Date();
+  meuCep = '30882770';
+  meuCpf = '12345678911';
+  strings: string[] = ['gato', 'cavalo'];
+
+  addString(newString) {
+    this.strings.push(newString);
+  }
 }

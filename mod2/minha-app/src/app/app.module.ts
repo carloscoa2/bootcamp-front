@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
@@ -15,6 +15,15 @@ import { CounterComponent } from './counter/counter.component';
 import { ConfigComponent } from './config/config.component';
 import { TimerComponent } from './timer/timer.component';
 
+import { CepPipe } from './cep.pipe';
+
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { from } from 'rxjs';
+import { CpfPipe } from './cpf.pipe';
+import { JoinStringsPipe } from './join-strings.pipe';
+registerLocaleData(localePt);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +38,12 @@ import { TimerComponent } from './timer/timer.component';
     CounterComponent,
     ConfigComponent,
     TimerComponent,
+    CepPipe,
+    CpfPipe,
+    JoinStringsPipe,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

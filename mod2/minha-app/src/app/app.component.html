@@ -1,8 +1,19 @@
-<div>
-  <div class="right">
-    <button *ngIf="!config" (click)="config = true">Configurações</button>
-    <button *ngIf="config" (click)="config = false">Voltar</button>
-  </div>
-  <app-config *ngIf="config" [exercises]="exercises">Configurações</app-config>
-  <app-timer *ngIf="!config" [exercises]="exercises">Cronômetro</app-timer>
-</div>
+<h3>Pipes</h3>
+<p>Texto: {{ text }}</p>
+<p>Texto: {{ text | lowercase }}</p>
+<p>Texto: {{ text | uppercase }}</p>
+<p>N: {{ n }}</p>
+<p>N formatado: {{ n | number: "4.1-3" }}</p>
+<p>Hoje: {{ hoje }}</p>
+<p>Hoje formatado: {{ hoje | date: "short" }}</p>
+<p>CEP: {{ meuCep | cep }}</p>
+<p>CPF: {{ meuCpf | cpf }}</p>
+
+<h3>Impure Pipe</h3>
+<input #ipt placeholder="Uma string" /><button (click)="addString(ipt.value)">
+  +
+</button>
+<ul>
+  <li *ngFor="let s of strings">{{ s }}</li>
+</ul>
+<p>Array formatado: {{ strings | joinStrings }}</p>
