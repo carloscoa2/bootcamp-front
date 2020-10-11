@@ -24,6 +24,8 @@ import { CpfPipe } from './cpf.pipe';
 import { JoinStringsPipe } from './join-strings.pipe';
 registerLocaleData(localePt);
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,7 @@ registerLocaleData(localePt);
     CpfPipe,
     JoinStringsPipe,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
 })

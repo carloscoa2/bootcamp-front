@@ -1,19 +1,20 @@
-<h3>Pipes</h3>
-<p>Texto: {{ text }}</p>
-<p>Texto: {{ text | lowercase }}</p>
-<p>Texto: {{ text | uppercase }}</p>
-<p>N: {{ n }}</p>
-<p>N formatado: {{ n | number: "4.1-3" }}</p>
-<p>Hoje: {{ hoje }}</p>
-<p>Hoje formatado: {{ hoje | date: "short" }}</p>
-<p>CEP: {{ meuCep | cep }}</p>
-<p>CPF: {{ meuCpf | cpf }}</p>
-
-<h3>Impure Pipe</h3>
-<input #ipt placeholder="Uma string" /><button (click)="addString(ipt.value)">
-  +
-</button>
-<ul>
-  <li *ngFor="let s of strings">{{ s }}</li>
-</ul>
-<p>Array formatado: {{ strings | joinStrings }}</p>
+<h3>Formulários</h3>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label
+    >Nome:
+    <input formControlName="name" />
+  </label>
+  <div *ngIf="myForm.get('name').errors?.required">
+    Este campo deve ser preenchido
+  </div>
+  <div *ngIf="myForm.get('name').errors?.forbiddenName">
+    O nome não pode ser Carlos
+  </div>
+  <label
+    >Endereço:
+    <input formControlName="address" />
+  </label>
+  <input [disabled]="myForm.status == 'INVALID'" type="submit" value="Salvar" />
+</form>
+<p>Status do formulário: {{ myForm.status }}</p>
+<p>{{ myForm.value | json }}</p>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Exercise } from './exercise';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,25 @@ import { Exercise } from './exercise';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  text = 'Uma mensagem aqui';
-  n = 1234.788;
-  hoje = new Date();
-  meuCep = '30882770';
-  meuCpf = '12345678911';
-  strings: string[] = ['gato', 'cavalo'];
+  myForm = new FormGroup({
+    name: new FormControl('', [
+      Validators.required,
+      forbiddenNameValidator('Carlos'),
+    ]),
+    address: new FormControl(''),
+  });
 
-  addString(newString) {
-    this.strings.push(newString);
+  onSubmit() {
+    console.log(this.myForm.value);
   }
+}
+
+export function forbiddenNameValidator(invalidName: string): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    if (control.value === invalidName) {
+      return { forbiddenName: { value: control.value } };
+    } else {
+      return null;
+    }
+  };
 }
