@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Page1Component } from './page1/page1.component';
-import { Page2Component } from './page2/page2.component';
+import { ContactCreateComponent } from './contact-create/contact-create.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactUpdateComponent } from './contact-update/contact-update.component';
 
 const routes: Routes = [
-  { path: 'page1', component: Page1Component },
-  { path: '', redirectTo: 'page1', pathMatch: 'full' },
-  { path: 'page2/:id', component: Page2Component },
+  { path: 'contacts', component: ContactListComponent },
+  { path: 'contacts/create', component: ContactCreateComponent },
+  { path: 'contacts/:id', component: ContactUpdateComponent },
+  { path: '', redirectTo: 'contacts', pathMatch: 'full' },
 ];
 
 @NgModule({

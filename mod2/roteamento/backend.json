@@ -1,29 +1,39 @@
 {
-  "produtos": [
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Danilo",
+      "phone": "14 1234-1234"
+    },
     {
       "id": 2,
-      "nome": "X-Burguer",
-      "preco": 10.5
+      "name": "Rafael",
+      "phone": "12 1234-1234"
+    },
+    {
+      "id": 3,
+      "name": "João",
+      "phone": "12 1234-1234"
     },
     {
       "id": 4,
-      "nome": "X-Picanha",
-      "preco": 14.5
+      "name": "Maria",
+      "phone": "12 1234-1234"
     },
     {
       "id": 5,
-      "nome": "Coca cola lata",
-      "preco": 5.5
+      "name": "Amanda",
+      "phone": "12 1234-1234"
     },
     {
-      "nome": "Misto quente",
-      "preco": 5.6,
+      "id": 6,
+      "name": "Gustavo",
+      "phone": "12 1234-1234"
+    },
+    {
+      "name": "Leandro",
+      "phone": "123",
       "id": 7
-    },
-    {
-      "nome": "teste",
-      "preco": 66,
-      "id": 10
     }
   ]
 }
