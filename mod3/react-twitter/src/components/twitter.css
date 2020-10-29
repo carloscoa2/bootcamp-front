@@ -1,0 +1,11 @@
+.classOk {
+  color: darkgreen;
+}
+
+.classWarning {
+  color: darkgoldenrod;
+}
+
+.classDanger {
+  color: darkred;
+}
