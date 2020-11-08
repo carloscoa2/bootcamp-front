@@ -1,7 +1,7 @@
 # bootcamp-front
 My Code from Bootcamp Front End - IGTI
 
-mod1 - Fundamentos (JavaScript Moderno)
-mod2 - Angular
-mod3 - React
-mod4 - Vue
+<p>mod1 - Fundamentos (JavaScript Moderno)</p>
+<p>mod2 - Angular</p>
+<p>mod3 - React</p>
+<p>mod4 - Vue</p>
