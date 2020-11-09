@@ -1,6 +1,20 @@
 <template>
   <div>
-    <h1>Lista de Produtos</h1>
+    <v-container>
+      <v-alert type="success" :value="alert">
+        Produto adicionado
+      </v-alert>
+      <v-row justify="end">
+        <v-col>
+          <h1>Lista de Produtos</h1>
+        </v-col>
+        <v-col>
+          <!--  -->
+          <Carrinho />
+          <!--  -->
+        </v-col>
+      </v-row>
+    </v-container>
     <v-row>
       <v-col
         v-for="(prod, index) in produtos"
@@ -16,12 +30,16 @@
 </template>
 
 <script>
-import Produto from "@/components/Produto";
-import axios from "axios";
+import Produto from '@/components/Produto';
+import Carrinho from '@/components/Carrinho';
+import axios from 'axios';
+
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
     Produto,
+    Carrinho,
   },
   data() {
     return {
@@ -33,12 +51,14 @@ export default {
   },
   methods: {
     async buscarProdutos() {
-      const { data } = await axios.get("http://localhost:3000/produtos");
+      const { data } = await axios.get('http://localhost:3000/produtos');
       return data;
     },
+  },
+  computed: {
+    ...mapGetters(['carrinho', 'quantItens', 'alert']),
   },
 };
 </script>
 
-<style>
-</style>
+<style></style>

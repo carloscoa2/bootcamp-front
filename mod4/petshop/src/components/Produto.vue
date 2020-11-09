@@ -19,11 +19,7 @@
         {{ produto.descricao }}
       </v-card-text>
       <v-card-actions>
-        <v-btn
-          block
-          class="primary full width"
-          @click="comprar(produto.nome, produto.preco)"
-        >
+        <v-btn block class="primary full width" @click="addProduto(produto)">
           Comprar
         </v-btn>
       </v-card-actions>
@@ -32,21 +28,28 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 export default {
-  props: ["produto", "classes"],
+  props: ['produto', 'classes'],
   methods: {
     comprar(nome, preco) {
       const formatedPrice = this.formatNumber(preco);
       alert(`Produto: ${nome}\nPreço: ${formatedPrice}`);
     },
     formatNumber(value) {
-      if (typeof value !== "number") {
+      if (typeof value !== 'number') {
         return value;
       }
 
       value = value.toFixed(2);
       return `R$ ${value}`;
     },
+  },
+  computed: {
+    ...mapGetters(['carrinho']),
+  },
+  methods: {
+    ...mapActions(['addProduto']),
   },
 };
 </script>

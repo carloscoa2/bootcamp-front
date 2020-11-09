@@ -5,18 +5,47 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    carrinho: 'Lista do carrinho',
+    carrinho: [],
+    quantItens: 0,
+    precoTotal: 0,
+    alert: false,
   },
   mutations: {
-    decrement: (state) => (state.carrinho = 'Lista com menos'),
-    increment: (state, add) => (state.carrinho = 'Lista com mais ' + add),
+    addProduto: (state, produto) => {
+      state.carrinho.push(produto);
+
+      state.quantItens++;
+      if (produto.desconto !== undefined) {
+        state.precoTotal += produto.desconto;
+      } else {
+        state.precoTotal += produto.preco;
+      }
+      state.alert = true;
+      setTimeout(() => {
+        state.alert = false;
+      }, 1000);
+    },
+    removerProduto: (state, produto) => {
+      const found = state.carrinho.findIndex((item) => item.id === produto.id);
+      state.carrinho.splice(found, 1);
+
+      state.quantItens--;
+      if (produto.desconto !== undefined) {
+        state.precoTotal -= produto.desconto;
+      } else {
+        state.precoTotal -= produto.preco;
+      }
+    },
   },
   getters: {
     carrinho: (state) => state.carrinho,
+    quantItens: (state) => state.quantItens,
+    precoTotal: (state) => state.precoTotal,
+    alert: (state) => state.alert,
   },
   actions: {
-    decrement: ({ commit }) => commit('decrement'),
-    increment: ({ commit }) => commit('increment', 'add'),
+    addProduto: ({ commit }, produto) => commit('addProduto', produto),
+    removerProduto: ({ commit }, produto) => commit('removerProduto', produto),
   },
 });
 export { store };
