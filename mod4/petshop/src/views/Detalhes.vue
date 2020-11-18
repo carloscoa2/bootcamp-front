@@ -1,9 +1,7 @@
 <template>
   <div>
     <v-container>
-      <v-alert type="success" :value="alert">
-        Produto adicionado
-      </v-alert>
+      <v-alert type="success" :value="alert"> Produto adicionado </v-alert>
 
       <div v-if="objectIsEmpty(produto)">
         <h1>Página não encontrada</h1>
@@ -22,7 +20,7 @@
 
         <v-row>
           <v-col>
-            <Produto :produto="produto" class=".descricao-resumida" />
+            <Produto :produto="produto" />
           </v-col>
         </v-row>
       </div>
@@ -31,11 +29,11 @@
 </template>
 
 <script>
-import Produto from '@/components/Produto';
-import Carrinho from '@/components/Carrinho';
-import axios from 'axios';
+import Produto from "@/components/Produto";
+import Carrinho from "@/components/Carrinho";
+import axios from "axios";
 
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
   components: {
@@ -63,14 +61,14 @@ export default {
         return data;
       }
 
-      throw 'Produto não encontrado';
+      throw "Produto não encontrado";
     },
     objectIsEmpty(obj) {
       return Object.keys(obj).length === 0;
     },
   },
   computed: {
-    ...mapGetters(['carrinho', 'quantItens', 'alert']),
+    ...mapGetters(["carrinho", "quantItens", "alert"]),
   },
 };
 </script>
